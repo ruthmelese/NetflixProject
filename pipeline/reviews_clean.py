@@ -1,32 +1,56 @@
+import logging
+from pathlib import Path
+
 import pandas as pd
 
+# Set up logging
+Path("logs").mkdir(exist_ok=True)
+logging.basicConfig(
+    filename="logs/data_cleaning.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+logger = logging.getLogger(__name__)
 
 def clean_reviews(input_path: str, output_path: str) -> pd.DataFrame:
-    df = pd.read_csv(input_path)
-    original_len = len(df)
-    print(f"Loaded {original_len} rows")
+    """Clean review data and save the result."""
+    try:
+        logger.info(f"Starting reviews cleaning: {input_path}")
 
-    # 1. Drop duplicate rows
-    df = df.drop_duplicates(keep="first")
-    print(f"After dedup:          {len(df)} rows (-{original_len - len(df)})")
+        df = pd.read_csv(input_path)
+        original_len = len(df)
+        logger.info(f"Loaded {original_len} rows")
 
-    # 2. Drop rows missing helpful_votes, total_votes, or sentiment_score
-    before_dropna = len(df)
-    df = df.dropna(subset=["helpful_votes", "total_votes", "sentiment_score"])
-    print(f"After dropping nulls: {len(df)} rows (-{before_dropna - len(df)})")
+        # Remove duplicate rows
+        df = df.drop_duplicates(keep="first")
+        logger.info(f"After dedup: {len(df)} rows")
 
-    # 3. Fix dtypes
-    df["review_date"] = pd.to_datetime(df["review_date"])
-    df["helpful_votes"] = df["helpful_votes"].astype(int)
-    df["total_votes"] = df["total_votes"].astype(int)
+        # Drop rows missing key numeric review fields
+        before_dropna = len(df)
+        df = df.dropna(subset=["helpful_votes", "total_votes", "sentiment_score"])
+        logger.info(f"After dropping nulls: {len(df)} rows (removed {before_dropna - len(df)})")
 
-    # review_text nulls left as NaN intentionally
+        # Fix data types
+        df["review_date"] = pd.to_datetime(df["review_date"])
+        df["helpful_votes"] = df["helpful_votes"].astype(int)
+        df["total_votes"] = df["total_votes"].astype(int)
 
-    print(f"Final row count:      {len(df)}")
-    df.to_csv(output_path, index=False)
-    print(f"Saved to {output_path}")
-    return df
+        # review_text nulls are left intentionally
+        df.to_csv(output_path, index=False)
+        logger.info(f"Saved cleaned reviews data to {output_path}")
+        logger.info("Reviews cleaning completed successfully")
 
+        return df
+
+    except FileNotFoundError:
+        logger.exception(f"Reviews file not found: {input_path}")
+        raise
+    except KeyError as e:
+        logger.exception(f"Missing expected column in reviews data: {e}")
+        raise
+    except Exception:
+        logger.exception("Unexpected error while cleaning reviews data")
+        raise
 
 if __name__ == "__main__":
     clean_reviews(
