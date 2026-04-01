@@ -74,11 +74,11 @@ This project falls within the domain of recommender systems, which is a branch o
 
 | Title | Description | Link to file in folder |
 |---|---|---|
-| Evaluating Recommender Systems | Recommender systems are typically evaluated using ranking and relevance metrics such as precision and recall. These metrics provide a clearer picture of how useful recommendations are beyond simple accuracy. | [evaluating_recommender_systems.pdf](https://drive.google.com/file/d/16furj22W_dZzl2UgAE4kHrMasyf6PQB-/view?usp=drive_link) |
-| Matrix Factorization for Recommendations | Matrix factorization models user-item interactions by mapping both users and items into a shared latent space. This approach allows systems to uncover hidden patterns in preferences and generate personalized recommendations. | [matrix_factorization.pdf](https://drive.google.com/file/d/1nRB3EkMenrkH3AYryHOwIwJ903fKZ1N7/view?usp=drive_link) |
-| Neural Collaborative Filtering | Neural collaborative filtering extends traditional methods by using neural networks to learn complex user-item relationships. This approach can improve recommendation quality by capturing non-linear patterns in the data. | [neural_collaborative_filtering.pdf](https://drive.google.com/file/d/1idkvq9tpv5t-UgHOTEjQ8trFCY5oPeuq/view?usp=drive_link) |
-| Limitations of Collaborative Filtering | Collaborative filtering methods often struggle with issues like cold start and sparse data. These limitations can reduce recommendation quality, especially for new users or less popular items. | [collaborative_filtering_limitations.pdf](https://drive.google.com/file/d/1SSA-czKnZHYVQfGFNAX2tEFWqbZbFaZu/view?usp=drive_link) |
-| System Architectures for Personalization and Recommendation | Large-scale recommendation systems are typically built as pipelines that include candidate generation, ranking, and filtering stages. These components work together to efficiently deliver personalized content to users. | [recommendation_system_architecture.pdf](https://drive.google.com/file/d/1cCJmfBxXCx_boXZuYBhApFOaiL22GTKp/view?usp=drive_link) |
+| Evaluating Recommender Systems | Recommender systems are typically evaluated using ranking and relevance metrics such as precision and recall. These metrics provide a clearer picture of how useful recommendations are beyond simple accuracy. | [evaluating_recommender_systems.pdf](https://myuva-my.sharepoint.com/:b:/g/personal/cup6cd_virginia_edu/IQBBH1fCWuE4RZsqA54qXhsXAXfkSVPzkk9crTc4knY-iz4?e=ecMFK0) |
+| Matrix Factorization for Recommendations | Matrix factorization models user-item interactions by mapping both users and items into a shared latent space. This approach allows systems to uncover hidden patterns in preferences and generate personalized recommendations. | [matrix_factorization.pdf](https://myuva-my.sharepoint.com/:b:/g/personal/cup6cd_virginia_edu/IQCD1KEe8c7mQ43zsfVAHgPRAQT69sfRUEIzHXN0wODqENM?e=Lkzvdk) |
+| Neural Collaborative Filtering | Neural collaborative filtering extends traditional methods by using neural networks to learn complex user-item relationships. This approach can improve recommendation quality by capturing non-linear patterns in the data. | [neural_collaborative_filtering.pdf](https://myuva-my.sharepoint.com/:b:/g/personal/cup6cd_virginia_edu/IQCgX1dIVenTQ6mqp-ZOmaOuAf0STnvPUvaD3JeYor09gls?e=Ozw1Eu) |
+| Limitations of Collaborative Filtering | Collaborative filtering methods often struggle with issues like cold start and sparse data. These limitations can reduce recommendation quality, especially for new users or less popular items. | [collaborative_filtering_limitations.pdf](https://myuva-my.sharepoint.com/:b:/g/personal/cup6cd_virginia_edu/IQBFD0GAQVaeQZUuBXJHqKUTAY_6JKnsuFzmtLW2zJxdl_I?e=6P6TDV) |
+| System Architectures for Personalization and Recommendation | Large-scale recommendation systems are typically built as pipelines that include candidate generation, ranking, and filtering stages. These components work together to efficiently deliver personalized content to users. | [recommendation_system_architecture.pdf](https://myuva-my.sharepoint.com/:b:/g/personal/cup6cd_virginia_edu/IQCJ_eIKu7wpTpaHmBU7YmebAUUe4umNSHjE5btBuRdaYJM?e=wHKS2r) |
 
 ---
 
@@ -94,10 +94,10 @@ The data was cleaned and transformed into a structured relational format using P
 
 | File | Description | Link |
 |------|-------------|------|
-| users_clean.py | Cleans and standardizes user data | link |
-| watch_history_clean.py | Processes viewing session data | link |
-| reviews_clean.py | Cleans review and rating data | link |
-| movies_clean.py | Cleans movie metadata | link |
+| users_clean.py | Cleans and standardizes user-level data, including handling missing values and ensuring consistent user identifiers for downstream joins | https://github.com/ruthmelese/NetflixProject/blob/main/pipeline/users_clean.py |
+| watch_history_clean.py | Processes raw viewing session data, deriving completion metrics and structuring user–content interactions for analysis | https://github.com/ruthmelese/NetflixProject/blob/main/pipeline/watch_history_clean.py |
+| reviews_clean.py | Cleans review and rating data, normalizing user feedback and preparing sentiment and rating signals for modeling | https://github.com/ruthmelese/NetflixProject/blob/main/pipeline/reviews_clean.py |
+| movies_clean.py | Cleans and organizes movie metadata, including genres and external ratings, to support feature engineering and recommendation scoring | https://github.com/ruthmelese/NetflixProject/blob/main/pipeline/movies_clean.py |
 
 ### Bias Identification
 
@@ -123,10 +123,10 @@ The dataset was structured into relational tables to support efficient querying 
 
 | Table | Description | Link |
 |------|-------------|------|
-| users_clean | User-level information | link |
-| movies_clean | Movie metadata | link |
-| watch_history_clean | Viewing sessions | link |
-| reviews_clean | User reviews and ratings | link |
+| Users | User-level information | [users_clean.csv](https://myuva-my.sharepoint.com/:x:/g/personal/cup6cd_virginia_edu/IQA28B07xeZ6S67kSPG6l3oMAfP3mKQrtl0-A8uC-mXjfNo?e=I1CQQb) |
+| Movies | Movie metadata | [movies_clean.csv](https://myuva-my.sharepoint.com/:x:/g/personal/cup6cd_virginia_edu/IQDEHxo6M-YwRrY2xktXA8omASj1VLhVXSMnUrnjruEUxj8?e=8OlPay) |
+| Watch History | Viewing sessions | [watch_history_clean.csv](https://myuva-my.sharepoint.com/:x:/g/personal/cup6cd_virginia_edu/IQAYhtJwd6agSqN8i7rPL4R5ASvwOE8PtPXNW_KO_maZ5H4?e=vaDYR4) |
+| Reviews | User reviews and ratings | [reviews_clean.csv](https://myuva-my.sharepoint.com/:x:/g/personal/cup6cd_virginia_edu/IQDvOiXLZzPtQKbH2ImqqbB5AQa5w4R7Qv-UHQVvj7UhwL4?e=b2WZDJ) |
 
 ### Item 3. Data Dictionary
 
@@ -244,7 +244,7 @@ See [press-release.md](press-release.md)
 
 ## Data
 
-[OneDrive Folder Link]
+[[OneDrive Folder Link](https://myuva-my.sharepoint.com/:f:/g/personal/cup6cd_virginia_edu/IgAjhQzKwslGR7JxSBBK85FaAeGtPGEIYve6gsApg2Y2YDw?e=zrpke6)]
 
 ---
 
