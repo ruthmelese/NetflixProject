@@ -21,5 +21,3 @@ This project introduces a personalized recommendation system that learns from re
 The result is a ranked list of titles tailored to each individual user — surfaced before they start scrolling. If the system predicts you're likely to watch something all the way through, it moves to the top. If a title fits your favourite genre *and* has strong engagement from viewers like you, it gets an extra boost. The goal is simple: spend less time searching, and more time watching something you'll actually enjoy.
 
 ---
-
-*This project was completed as part of DS 4320 at the University of Virginia. All data used is either synthetic or anonymized. Full repository available at [https://github.com/ruthmelese/NetflixProject](https://github.com/ruthmelese/NetflixProject).*
