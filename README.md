@@ -118,7 +118,7 @@ Several judgment calls were made during cleaning that introduce uncertainty and 
 
 ### Schema (ER Diagram)
 
-![Insert ER diagram image here](ER_diagram.png)
+![ER Diagram](ER_diagram.png)
 
 ### Data Tables
 
