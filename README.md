@@ -12,7 +12,7 @@ This repository contains the data, cleaning pipeline, and proof-of-concept recom
 
 ## Project Information
 
-- **DOI:** [Insert DOI after publishing to Zenodo]
+- **DOI:** [Zenodo](https://doi.org/10.5281/zenodo.19371113)
 - **Press Release:** [Tired of Searching? A Recommendation System That Finds What You Want Faster](press_release.md)
 - **Data:** [OneDrive Folder Link](https://myuva-my.sharepoint.com/:f:/g/personal/cup6cd_virginia_edu/IgAjhQzKwslGR7JxSBBK85FaAeGtPGEIYve6gsApg2Y2YDw?e=zrpke6)
 - **Pipeline:** [pipeline/pipeline.ipynb](pipeline/pipeline.ipynb)
@@ -85,7 +85,7 @@ This project falls within the domain of recommender systems, which is a branch o
 
 ## Data Creation
 
-### Data Acquisition (Provenance)
+### Data Acquisition
 
 The dataset used in this project was sourced from a publicly available Kaggle dataset containing user interaction and media metadata. The raw data included user profiles, viewing history, movie attributes, and review information. These datasets were initially stored in separate files with inconsistent formats and varying levels of completeness.
 
@@ -231,4 +231,4 @@ The model scores all unseen titles and ranks them based on predicted relevance. 
 
 ## License
 
-MIT — see LICENSE
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
