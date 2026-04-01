@@ -14,7 +14,7 @@ This repository contains the data, cleaning pipeline, and proof-of-concept recom
 
 - **DOI:** [Insert DOI after publishing to Zenodo]
 - **Press Release:** [Tired of Searching? A Recommendation System That Finds What You Want Faster](press_release.md)
-- **Data:** [[OneDrive Folder Link](https://myuva-my.sharepoint.com/:f:/g/personal/cup6cd_virginia_edu/IgAjhQzKwslGR7JxSBBK85FaAeGtPGEIYve6gsApg2Y2YDw?e=zrpke6)]
+- **Data:** [OneDrive Folder Link](https://myuva-my.sharepoint.com/:f:/g/personal/cup6cd_virginia_edu/IgAjhQzKwslGR7JxSBBK85FaAeGtPGEIYve6gsApg2Y2YDw?e=zrpke6)
 - **Pipeline:** [pipeline/pipeline.ipynb](pipeline/pipeline.ipynb)
 - **License:** MIT (see LICENSE)
 
