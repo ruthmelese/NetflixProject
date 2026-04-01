@@ -13,7 +13,7 @@ This repository contains the data, cleaning pipeline, and proof-of-concept recom
 ## Project Information
 
 - **DOI:** [Insert DOI after publishing to Zenodo]
-- **Press Release:** [Tired of Searching? A Recommendation System That Finds What You Want Faster](press-release.md)
+- **Press Release:** [Tired of Searching? A Recommendation System That Finds What You Want Faster](press_release.md)
 - **Data:** [OneDrive Folder Link]
 - **Pipeline:** [pipeline/pipeline.ipynb](pipeline/pipeline.ipynb)
 - **License:** MIT (see LICENSE)
